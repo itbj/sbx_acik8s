@@ -1,0 +1,4 @@
+venv/
+*.retry
+*.pyc
+*scratch*
