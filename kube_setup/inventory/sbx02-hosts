@@ -44,7 +44,7 @@ all:
           ansible_user: developer
           aci_interface: ens224
           node:
-            ip: 172.20.2.11
+            ip: 172.20.2.13
             prefix: 26
             network: 172.20.2.0
             gateway: 172.20.2.1
