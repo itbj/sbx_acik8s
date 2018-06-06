@@ -53,7 +53,7 @@ spec:
           # - name: myhero_tropo_server
           #   value: http://tropo.myhero.imapex.io
           - name: myhero_app_server
-            value: http://172.20.5.194
+            value: http://<PROVIDE-EXTERNAL-IP-FOR-myhero-app>
           - name: myhero_app_key
             value: SecureApp
         imagePullPolicy: Always
