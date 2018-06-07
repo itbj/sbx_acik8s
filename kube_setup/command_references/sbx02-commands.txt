@@ -26,7 +26,7 @@ sudo kubeadm join --token TOKEN MASTER_NODE_IP:6443
 # Command to copy kubeconfig to devbox
 # Executed on sbx02devbox
 mkdir -p $HOME/.kube
-scp root@172.20.0.109:/etc/kubernetes/admin.conf $HOME/.kube/config
+scp developer@172.20.0.109:.kube/config $HOME/.kube/config
 
 # Verify kubectl working on devbox
 kubectl get nodes
