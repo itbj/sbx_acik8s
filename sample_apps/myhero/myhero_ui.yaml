@@ -19,7 +19,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: myhero-ui
-  # namespace: hapresto
 spec:
   replicas: 2
   template:
@@ -48,10 +47,6 @@ spec:
           name: http
           protocol: TCP
         env:
-          # - name: myhero_spark_server
-          #   value: http://spark.myhero.imapex.io
-          # - name: myhero_tropo_server
-          #   value: http://tropo.myhero.imapex.io
           - name: myhero_app_server
             value: http://<PROVIDE-EXTERNAL-IP-FOR-myhero-app>
           - name: myhero_app_key

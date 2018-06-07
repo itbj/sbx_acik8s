@@ -19,7 +19,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: myhero-mosca
-  # namespace: hapresto
 spec:
   replicas: 1
   template:
