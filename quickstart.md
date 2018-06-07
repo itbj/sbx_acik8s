@@ -704,7 +704,7 @@ You are now ready to install Kubernetes onto your hosts.  During this phase you'
 1. **Ensuring that you are in the folder for your assigned pod**, run this command to apply the ACI CNI to Kubernetes.  
 
     ```bash
-    kubectl apply -f Application Centric Infrastructurecontainers.yaml
+    kubectl apply -f aci-containers.yaml
     ```
 
     <details>
