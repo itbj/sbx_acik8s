@@ -30,12 +30,12 @@ aci_config:
 # sbx00 172.20.4.0/22  (node, extern)
 # sbx00
 net_config:
-  node_subnet: 172.20.15.1/26      # Subnet to use for nodes
+  node_subnet: 172.20.63.1/26      # Subnet to use for nodes
   pod_subnet: 10.200.0.1/16      # Subnet to use for Kubernetes Pods/CloudFoundry containers
     # If deployed containers need to access internet, need to have SNAT on this Subnet
 # vip_subnet: 10.3.0.1/16       # Subnet to use for virtual IPs (CloudFoundry only)
-  extern_dynamic: 172.20.15.193/27   # Subnet to use for dynamic external IPs  ROUTABLE
-  extern_static: 172.20.15.225/27    # Subnet to use for static external IPs   ROUTABLE
+  extern_dynamic: 172.20.63.193/27   # Subnet to use for dynamic external IPs  ROUTABLE
+  extern_static: 172.20.63.225/27    # Subnet to use for static external IPs   ROUTABLE
   node_svc_subnet: 192.168.100.1/24  # Subnet to use for service graph         NOT ROUTABLE
   kubeapi_vlan: 901            # The VLAN used by the physdom for nodes (Kubernetes only)
   service_vlan: 903            # The VLAN used by LoadBalancer services
