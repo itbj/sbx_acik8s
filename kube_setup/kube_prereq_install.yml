@@ -69,15 +69,16 @@
         state: restarted
         enabled: yes
 
-    - name: Open ports for Kubernetes
-      with_items:
-        - 6443
-        - 10250
-      firewalld:
-        port: "{{ item }}/tcp"
-        immediate: yes
-        permanent: true
-        state: enabled
+    # Disabling these steps as firewalld is being disabled
+    # - name: Open ports for Kubernetes
+    #   with_items:
+    #     - 6443
+    #     - 10250
+    #   firewalld:
+    #     port: "{{ item }}/tcp"
+    #     immediate: yes
+    #     permanent: true
+    #     state: enabled
 
     - name: Disable firewalld
       service:
