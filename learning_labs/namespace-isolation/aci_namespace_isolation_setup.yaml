@@ -1,9 +1,21 @@
 # Create EPG for Sandbox Management
 ---
-- name: Setup Namespace Segmentation
+- name: Setup ACI Objects for Namespace Isolation
   hosts: apic
   connection: local
   gather_facts: False
+
+  vars_prompt:
+    - name: "username"
+      prompt: "What is your APIC username? This would have been provided in your Sandbox reservation details"
+      private: no
+    - name: "password"
+      prompt: "What is your APIC passwrod? This would have been provided in your Sandbox reservation details"
+      private: no
+    - name: "podnum"
+      prompt: "What is your 2 digit pod number? If your in SBX03, enter 03."
+      private: no
+
 
   tasks:
     # Create EPG
