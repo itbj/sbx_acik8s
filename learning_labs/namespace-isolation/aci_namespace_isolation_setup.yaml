@@ -1,4 +1,3 @@
-# Create EPG for Sandbox Management
 ---
 - name: Setup ACI Objects for Namespace Isolation
   hosts: apic
@@ -10,7 +9,7 @@
       prompt: "What is your APIC username? This would have been provided in your Sandbox reservation details"
       private: no
     - name: "password"
-      prompt: "What is your APIC passwrod? This would have been provided in your Sandbox reservation details"
+      prompt: "What is your APIC password? This would have been provided in your Sandbox reservation details"
       private: no
     - name: "podnum"
       prompt: "What is your 2 digit pod number? If your in SBX03, enter 03."
