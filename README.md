@@ -28,7 +28,7 @@ Looking to get up and running as fast as possible?  After reserving your sandbox
       && chmod +x auto_deploy.sh
     ```
 
-1. Run the script providing your 2-digit POD_NUM, POD_PASS, and the phase of `full` to complete the configurations from previous labs in the series.
+1. Run the script providing your 2-digit POD_NUM, POD_PASS, and the phase of `full`.
 
     ```bash
     # Replace POD_NUM and POD_PASS in the command with the details from your lab.
@@ -62,6 +62,8 @@ Looking to get up and running as fast as possible?  After reserving your sandbox
     </details>    
 
 1. Once the script complete, you can look at the contents of the file `auto_deploy.log` to see detailed output from the commands and automation executed.   
+
+1. Now you can move onto deploying a sample application.  Checkout the [sample_apps](sample_apps/) directory in this repo for some ideas.  
 
 ## Quick Start Guide
 If you're looking for a fast walk-through of the steps it takes to setup and integrate ACI with Kubernetes, checkout the [Quick Start Guide](quickstart.md).  
