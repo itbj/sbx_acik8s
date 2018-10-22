@@ -51,13 +51,16 @@ case ${DEPLOY_PHASE} in
   *) echo "  Requested Deploy Stage of '${DEPLOY_PHASE}' not valid"; exit;
 esac
 
-# Final confirmation before beginning
-echo "Would you like to continue? [yes/no] "
-read CONFIRM
-if [ ${CONFIRM} != "yes" ]
+# Final confirmation before beginning, if "force" not set.
+if [ $4 != "-f" ]
 then
-  echo "Auto Deployment Canceled."
-  exit
+  echo "Would you like to continue? [yes/no] "
+  read CONFIRM
+  if [ ${CONFIRM} != "yes" ]
+  then
+    echo "Auto Deployment Canceled."
+    exit
+  fi
 fi
 
 echo "Beginning Auto Deployment of Kubernetes with ACI CNI Sandbox."

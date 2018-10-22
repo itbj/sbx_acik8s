@@ -25,15 +25,18 @@ then
   exit
 fi
 
-# Final confirmation before beginning
-echo "This process will delete any exisiting Kubernetes cluster currently configured, "
-echo "clear SSH authentication keys between DevBox and nodes, and delete code repo from DevBox."
-echo "Would you like to continue? [yes/no] "
-read CONFIRM
-if [ ${CONFIRM} != "yes" ]
+# Final confirmation before beginning, if "force" not set 
+if [ $4 != "-f" ]
 then
-  echo "Auto Deployment Canceled."
-  exit
+  echo "This process will delete any exisiting Kubernetes cluster currently configured, "
+  echo "clear SSH authentication keys between DevBox and nodes, and delete code repo from DevBox."
+  echo "Would you like to continue? [yes/no] "
+  read CONFIRM
+  if [ ${CONFIRM} != "yes" ]
+  then
+    echo "Auto Deployment Canceled."
+    exit
+  fi
 fi
 
 # Activate the venv for the project
