@@ -7,12 +7,12 @@ This repository is intended to be used with the [DevNet Sandbox: ACI and Kuberne
 
 ## Table of Contents
 
+* [ACI and Kubernetes Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) 
 * [Auto Deployment of Kubernetes and ACI](#auto-deployment-of-kubernetes-and-aCI)
+* [Quick Start Guide](quickstart.md)
 * [Sandbox Topology Details](#sandbox-topology-details)
 * [Notes on the ACI tenant and base object creation](#notes-on-the-aci-tenant-and-base-object-creation)
 * [Reference Links](#reference-links)
-* [Quick Start Guide](quickstart.md)
-* [Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) 
 
 ## Auto Deployment of Kubernetes and ACI
 Looking to get up and running as fast as possible?  After reserving your sandbox, you can use the [`auto_deploy.sh`](https://github.com/DevNetSandbox/sbx_acik8s/blob/master/kube_setup/auto_deploy.sh) script to setup the environment, Kubernetes, and ACI CNI plug-in automatically and be ready to deploy applications in about 5 minutes.  
@@ -63,6 +63,11 @@ Looking to get up and running as fast as possible?  After reserving your sandbox
 
 1. Once the script complete, you can look at the contents of the file `auto_deploy.log` to see detailed output from the commands and automation executed.   
 
+## Quick Start Guide
+If you're looking for a fast walk-through of the steps it takes to setup and integrate ACI with Kubernetes, checkout the [Quick Start Guide](quickstart.md).  
+
+Using provided automation scripts, and details, you'll start by preparing your development environment and the provided Linux hosts for Kubernetes, move onto installing Kubernetes and the CNI plug-in.  Finally, you'll install an initial application into your cluster.  
+
 ## Sandbox Topology Details
 A sandbox starts with a base topology and configuration that includes the following:
 
@@ -99,5 +104,3 @@ The instructions in this quick start, as well as the learning labs accompanying 
 * [Using kubeadm to Create a Cluster](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 
 
-# Quick Start Guide
-Looking to get started as quickly as possible?  Well checkout the [Quick Start Guide](quickstart.md).
