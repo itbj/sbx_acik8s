@@ -7,11 +7,61 @@ This repository is intended to be used with the [DevNet Sandbox: ACI and Kuberne
 
 ## Table of Contents
 
+* [Auto Deployment of Kubernetes and ACI](#auto-deployment-of-kubernetes-and-aCI)
 * [Sandbox Topology Details](#sandbox-topology-details)
 * [Notes on the ACI tenant and base object creation](#notes-on-the-aci-tenant-and-base-object-creation)
 * [Reference Links](#reference-links)
 * [Quick Start Guide](quickstart.md)
-* [Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) **Coming Soon**
+* [Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) 
+
+## Auto Deployment of Kubernetes and ACI
+Looking to get up and running as fast as possible?  After reserving your sandbox, you can use the [`auto_deploy.sh`](https://github.com/DevNetSandbox/sbx_acik8s/blob/master/kube_setup/auto_deploy.sh) script to setup the environment, Kubernetes, and ACI CNI plug-in automatically and be ready to deploy applications in about 5 minutes.  
+
+### Steps
+
+1. Connect to your sandbox via VPN, and SSH to your DevBox, or "Development Workstation"
+1. Run this command to download the [`auto_deploy.sh`](https://github.com/DevNetSandbox/sbx_acik8s/blob/master/kube_setup/auto_deploy.sh) script from GitHub, and make it executable.  
+
+    ```bash
+    curl -o auto_deploy.sh \
+      https://raw.githubusercontent.com/DevNetSandbox/sbx_acik8s/master/kube_setup/auto_deploy.sh \
+      && chmod +x auto_deploy.sh
+    ```
+
+1. Run the script providing your 2-digit POD_NUM, POD_PASS, and the phase of `full` to complete the configurations from previous labs in the series.
+
+    ```bash
+    # Replace POD_NUM and POD_PASS in the command with the details from your lab.
+    ./auto_deploy.sh POD_NUM POD_PASS full
+
+    # Example command: ./auto_deploy.sh 00 aciaf87a full
+    ```
+
+    <details>
+    <summary>Sample Output</summary>
+    <pre>
+    Auto Deployment of Kubernetes with ACI CNI Sandbox requested for:
+      Pod Number: 00
+      Pod Password: aciaf87a
+    Deploy Stage: full
+    Would you like to continue? [yes/no]
+    yes
+    Beginning Auto Deployment of Kubernetes with ACI CNI Sandbox.
+
+    Setup DevBox with Development Tools and Repos
+    done
+
+    Create and deploy RSA keys for passwordless login to pod nodes from DevBox
+    done
+
+    Installing Kubernetes admin tools onto DevBox
+    done
+
+    Requested Phase 'full' complete.
+    </pre>
+    </details>    
+
+1. Once the script complete, you can look at the contents of the file `auto_deploy.log` to see detailed output from the commands and automation executed.   
 
 ## Sandbox Topology Details
 A sandbox starts with a base topology and configuration that includes the following:
