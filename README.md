@@ -1,25 +1,27 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/DevNetSandbox/sbx_acik8s)
+
 # DevNet Sandbox: ACI and Kubernetes
 This repository is intended to be used with the [DevNet Sandbox: ACI and Kubernetes](https://devnetsandbox.cisco.com/RM/Diagram/Index/29a5baac-bc78-4885-b4ec-83294c64bcc4?diagramType=Topology).  Each instance of this Sandbox includes everything needed to deploy a Kubernetes Cluster using the Cisco ACI CNI Plug-In allowing network, application, and security teams to deploy policies to for micro service applications and containers consistent with other systems.  
 
 ![](readme_images/aci_k8s1.png)
 
-## Table of Contents 
+## Table of Contents
 
 * [Sandbox Topology Details](#sandbox-topology-details)
 * [Notes on the ACI tenant and base object creation](#notes-on-the-aci-tenant-and-base-object-creation)
 * [Reference Links](#reference-links)
 * [Quick Start Guide](quickstart.md)
-* [Learning Labs]() **Coming Soon**
+* [Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) **Coming Soon**
 
 ## Sandbox Topology Details
-A sandbox starts with a base topology and configuration that includes the following: 
+A sandbox starts with a base topology and configuration that includes the following:
 
 * 1 Development Workstation or "devbox"
-    * Network connection to the sandbox pods management network 
-* 3 Kuberenetes Hosts (1 master and 2 nodes) 
-    * Network connection to the sandbox pods management network 
+    * Network connection to the sandbox pods management network
+* 3 Kuberenetes Hosts (1 master and 2 nodes)
+    * Network connection to the sandbox pods management network
     * 2nd unconfigured network adapter to be used by Kubernetes
-* ACI tenant and base objects for integration (details on this [below](#notes-on-the-aci-tenant-and-base-object-creation)) 
+* ACI tenant and base objects for integration (details on this [below](#notes-on-the-aci-tenant-and-base-object-creation))
 
 ![](readme_images/sbx_topology_initial.jpg)
 
@@ -27,11 +29,11 @@ After deploying Kubernetes, the ACI CNI Plug-in, and Sample Applications you wil
 
 ![](readme_images/sbx_topology_final.jpg)
 
-> Note: These topologies are logical block drawings created to illustrate the concepts and structures underlying both Kubernetes and ACI. 
+> Note: These topologies are logical block drawings created to illustrate the concepts and structures underlying both Kubernetes and ACI.
 
 By following along with the resources available for this Sandbox you will gain an understanding of how to build and work with the ACI/K8s integration.  
 
-## Notes on the ACI tenant and base object creation 
+## Notes on the ACI tenant and base object creation
 The first step in integrating ACI and Kubernetes involves using the [acc-provision]() Python tool provided by Cisco to create the foundation objects in ACI.  These include the tenant, bridge domains, epgs, etc that are shown in the initial topology above.  The execution of this tool requires Administrative rights to the APIC, something not available to your reservation account.  
 
 During the setup of the sandbox, this tool is run for your assigned pod on your behalf.  This tool takes as input a YAML file that contains the configuration details for the integration, and it generates a Kubernetes manifest file that is used to deploy the ACI CNI components to Kubernetes once it is installed and ready.  
