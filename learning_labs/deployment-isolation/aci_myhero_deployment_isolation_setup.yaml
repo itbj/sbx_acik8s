@@ -28,6 +28,8 @@
         filter: "{{ item.filter }}"
         descr: "{{ item.description }}"
       with_items: "{{ myhero.filters }}"
+      loop_control:
+        pause: 1
 
     - name: Create Filter Entries
       aci_filter_entry:
@@ -44,6 +46,8 @@
         dst_port_start: "{{ item.port }}"
         dst_port_end: "{{ item.port }}"
       with_items: "{{ myhero.filters }}"
+      loop_control:
+        pause: 1
 
     - name: Create Contracts
       aci_contract:
@@ -57,6 +61,8 @@
         scope: "{{ item.scope }}"
         description: "{{ item.description }}"
       with_items: "{{ myhero.contracts }}"
+      loop_control:
+        pause: 1
 
     - name: Create Contract Subjects
       aci_contract_subject:
@@ -69,6 +75,8 @@
         contract: "{{ item.contract }}"
         subject: "{{ item.subject }}"
       with_items: "{{ myhero.contracts }}"
+      loop_control:
+        pause: 1
 
     - name: Create Contract Subject Filters
       aci_contract_subject_to_filter:
@@ -82,6 +90,8 @@
         subject: "{{ item.subject }}"
         filter: "{{ item.filter }}"
       with_items: "{{ myhero.contracts }}"
+      loop_control:
+        pause: 1
 
     - name: Create Application Profile
       aci_ap:
@@ -107,6 +117,8 @@
         bd: "{{ item.bd }}"
         descr: "{{ item.description }}"
       with_items: "{{ myhero.appprofile.epgs }}"
+      loop_control:
+        pause: 1
 
     - name: Bind Kubernetes Domain to EPG
       aci_epg_to_domain:
@@ -123,6 +135,8 @@
         vm_provider: "kubernetes"
         encap_mode: "auto"
       with_items: "{{ myhero.appprofile.epgs }}"
+      loop_control:
+        pause: 1
 
     - name: Setup Contracts on EPGs
       aci_epg_to_contract:
@@ -139,3 +153,5 @@
       with_subelements:
         - "{{ myhero.appprofile.epgs }}"
         - contracts
+      loop_control:
+        pause: 1
