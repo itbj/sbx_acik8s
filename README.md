@@ -8,7 +8,7 @@ This repository is intended to be used with the [DevNet Sandbox: ACI and Kuberne
 ## Table of Contents
 
 * [ACI and Kubernetes Learning Labs](https://learninglabs.cisco.com/tracks/acik8s) 
-* [Auto Deployment of Kubernetes and ACI](#auto-deployment-of-kubernetes-and-aCI)
+* [Auto Deployment of Kubernetes and ACI](#auto-deployment-of-kubernetes-and-aci)
 * [Quick Start Guide](quickstart.md)
 * [Sandbox Topology Details](#sandbox-topology-details)
 * [Notes on the ACI tenant and base object creation](#notes-on-the-aci-tenant-and-base-object-creation)

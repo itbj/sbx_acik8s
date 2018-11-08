@@ -52,7 +52,7 @@ case ${DEPLOY_PHASE} in
 esac
 
 # Final confirmation before beginning, if "force" not set.
-if [ $4 != "-f" ]
+if [ "$4" != "-f" ]
 then
   echo "Would you like to continue? [yes/no] "
   read CONFIRM
